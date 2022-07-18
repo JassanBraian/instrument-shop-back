@@ -1,9 +1,10 @@
 const { Router } = require('express');
-const { 
-    getInstruments, 
-    createInstrument ,
+const {
+    getInstruments,
+    createInstrument,
     updateInstrument,
-    deleteInstrument
+    deleteInstrument,
+    getInstrumentById
 } = require('../controllers/instrumentController');
 
 const router = Router();
@@ -14,6 +15,7 @@ router.route('/')
 
 router.route('/:id')
     .put(updateInstrument)
-    .delete(deleteInstrument);
+    .delete(deleteInstrument)
+    .get(getInstrumentById);
 
 module.exports = router;
